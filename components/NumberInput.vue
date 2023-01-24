@@ -1,0 +1,31 @@
+
+
+<script setup>
+
+    let value = ref(0)
+
+</script>
+
+<template>
+
+    <div>
+        <button type="button" @click="value++">+</button>
+        <input type="text" v-model="value" @change="$emit('value-change', value)">
+        <button type="button" @click="value--">-</button>
+    </div>
+
+</template>
+
+<style lang="scss" scoped>
+
+    div {
+        display: flex;
+        flex-direction: row;
+
+        input {
+            width: 96.6%;
+            text-align: center;
+        }
+    }
+
+</style>
