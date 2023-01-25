@@ -28,10 +28,13 @@
             padding-right: 24px;
 
             margin-top: 23vh;
-            margin-bottom: 66vh;
-            height: 43vh;
+            margin-bottom: 86vh;
+            height: 63vh;
 
-            background-color: rgb(104, 100, 57);
+            background-color: rgb(98, 74, 46);
+
+            border-top: 4px solid gold;
+            border-bottom: 4px solid gold;
         }
     }
 

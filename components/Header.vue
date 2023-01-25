@@ -31,13 +31,15 @@
 <style lang="scss" scoped>
 
     header {
-        background-color: rgb(100, 100, 100, 0.25);
+        background-color: rgb(98, 74, 46);
         backdrop-filter: blur(25px);
         padding: 0.25em;
         display: sticky;
         display: flex;
         padding-left: 24px;
         padding-right: 24px;
+
+        border-bottom: 4px solid gold;
     }
     
     a {
@@ -45,7 +47,7 @@
     }
 
     h1, button a {
-        color: white;
+        color: gold;
         font-family: 'Tangerine';
         font-size: 42px;
     }

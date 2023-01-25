@@ -9,9 +9,12 @@
 <template>
 
     <div>
-        <button type="button" @click="value++">+</button>
-        <input type="text" v-model="value" @change="$emit('value-change', value)">
-        <button type="button" @click="value--">-</button>
+        <div class="main">
+            <button type="button" @click="value++">+</button>
+            <input type="text" v-model="value" @change="$emit('value-change', value)">
+            <button type="button" @click="value--">-</button>
+        </div>
+        <slot />
     </div>
 
 </template>
@@ -19,12 +22,16 @@
 <style lang="scss" scoped>
 
     div {
-        display: flex;
-        flex-direction: row;
+        text-align: center;
 
-        input {
-            width: 96.6%;
-            text-align: center;
+        .main {
+            display: flex;
+            flex-direction: row;
+
+            input {
+                width: 96.6%;
+                text-align: center;
+            }
         }
     }
 

@@ -18,11 +18,10 @@
     body {
         margin: 0%;
         background-image: url("/background.jpg");
-        background-size: cover;
+        background-size: tile;
     }
 
     main {
         height: 100vh;
-        backdrop-filter: blur(8px) hue-rotate(180deg);
     }
 </style>

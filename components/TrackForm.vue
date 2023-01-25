@@ -12,11 +12,21 @@
         <label>Name:</label>
         <input type="text" v-model="formName">
 
-        <label>Description:</label>
+        <label>Question:</label>
         <input type="text" v-model="formName">
 
         <label>Repeat:</label>
-        <NumberInput class="number-input"/>
+        <NumberInput>
+            <label class="number-input-label">Days</label>
+        </NumberInput>
+
+        <label>Answer Type:</label>
+        <div class="ticker-div">
+            <CheckboxInput label="Text" />
+            <CheckboxInput label="Number" />
+            <CheckboxInput label="True/False" />
+            <CheckboxInput label="Rating" />
+        </div>
 
     </form>
 
@@ -46,6 +56,17 @@
 
         input:focus {
             outline: none;
+        }
+
+        .number-input-label {
+            font-size: 16px;
+        }
+
+        .ticker-div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
         }
     }
 </style>
