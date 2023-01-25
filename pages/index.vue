@@ -11,6 +11,9 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
         </Head>
         <Header />
+        <Panel>
+            <h1>Test</h1>
+        </Panel>
     </main>
 </template>
 

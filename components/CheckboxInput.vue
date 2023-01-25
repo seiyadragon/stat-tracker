@@ -1,23 +1,25 @@
 
 <script>
 
-export default {
-    props: {
-        label: String
-    },
-    data() {
-        return {
-            checkboxTicked: false
+    export default {
+        props: {
+            label: String,
+            canTick: Boolean,
+            valueID: Number
+        },
+        data() {
+            return {
+                checkboxTicked: false
+            }
         }
     }
-}
 
 </script>
 
 <template>
 
-    <div :class="checkboxTicked ? 'selected-input' : 'unselected-input'" @click="$refs.checkInput.click()">
-        <input type="checkbox" v-model="checkboxTicked" @click="$emit('checkbox-clicked', [label, checkboxTicked])" ref="checkInput">
+    <div :class="checkboxTicked && canTick ? 'selected-input' : 'unselected-input'" @click="canTick ? $refs.checkInput.click() : checkboxTicked = false">
+        <input type="checkbox" v-model="checkboxTicked" @click="$emit('checkbox-clicked', [valueID, !checkboxTicked])" ref="checkInput">
         <label>{{ label }}</label>
     </div>
 

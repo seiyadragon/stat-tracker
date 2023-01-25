@@ -12,12 +12,10 @@
 <template>
 
     <header>
-        <NuxtLink to="/">
-            <h1>Track your stats!</h1>
-        </NuxtLink>
+        <img src="favicon.ico" alt="Chart Logo">
         <button @click="onTrackClick()">
             <a href="#">
-                <h1>Track</h1>
+                <h1>Add</h1>
             </a>
         </button>
     </header>
@@ -36,32 +34,37 @@
         padding: 0.25em;
         display: sticky;
         display: flex;
-        padding-left: 24px;
-        padding-right: 24px;
-
+        max-height: 64px;
         border-bottom: 4px solid gold;
-    }
+        
+        padding-left: 384px;
+        padding-right: 384px;
+        @media (max-width: 400px) {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        a {
+            text-decoration: none;
+        }
     
-    a {
-        text-decoration: none;
-    }
-
-    h1, button a {
-        color: gold;
-        font-family: 'Tangerine';
-        font-size: 42px;
-    }
-
-    button {
-        display: flex;
-        margin-left: auto;
-        background-color: transparent;
-        border: none;
-        display: table-cell;
-        vertical-align: middle;
-        transition: transform 0.25s;
-
-        :hover {
+        h1, button a {
+            color: gold;
+            font-family: 'Tangerine';
+        }
+    
+        button {
+            display: flex;
+            margin-left: auto;
+            background-color: transparent;
+            border: none;
+            display: table-cell;
+            vertical-align: middle;
+            transition: transform 0.5s;
+            transform: scale(1, 1);
+        }
+    
+        button:hover {
             transform: scale(1.25, 1.25);
         }
     }

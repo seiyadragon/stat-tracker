@@ -9,12 +9,12 @@
 <template>
 
     <div>
+        <slot />
         <div class="main">
             <button type="button" @click="value++">+</button>
             <input type="text" v-model="value" @change="$emit('value-change', value)">
             <button type="button" @click="value--">-</button>
         </div>
-        <slot />
     </div>
 
 </template>
