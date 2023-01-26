@@ -1,8 +1,24 @@
 
 
-<script setup>
+<script>
 
-    let value = ref(0)
+    export default {
+        data() {
+            return {
+                value: 0
+            }
+        },
+        methods: {
+            onPlusClick() {
+                this.value++
+                this.$emit('value-change', [this.value])
+            },
+            onMinusClick() {
+                this.value--
+                this.$emit('value-change', [this.value])
+            }
+        }
+    }
 
 </script>
 
@@ -11,9 +27,9 @@
     <div>
         <slot />
         <div class="main">
-            <button type="button" @click="value++">+</button>
-            <input type="text" v-model="value" @change="$emit('value-change', value)">
-            <button type="button" @click="value--">-</button>
+            <button type="button" @click="onPlusClick">+</button>
+            <input type="text" v-model="value" @change="$emit('value-change', [value])">
+            <button type="button" @click="onMinusClick">-</button>
         </div>
     </div>
 

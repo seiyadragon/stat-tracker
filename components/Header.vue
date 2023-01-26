@@ -1,10 +1,22 @@
 
-<script setup>
+<script>
 
-    let isMenuOpen = ref(false)
-
-    function onTrackClick() {
-        isMenuOpen.value = !isMenuOpen.value
+    export default {
+        data() {
+            return {
+                isMenuOpen: false,
+            }
+        },
+        emits: ['form-data-received'],
+        methods: {
+            onTrackClick() {
+                this.isMenuOpen = !this.isMenuOpen
+            },
+            onSubmitData([formData]) {
+                this.onTrackClick()
+                this.$emit('form-data-received', [formData])
+            }
+        }
     }
 
 </script>
@@ -21,7 +33,7 @@
     </header>
 
     <Popup v-if="isMenuOpen === true" @onBackClick="onTrackClick">
-        <TrackForm />
+        <TrackForm @data-submitted="onSubmitData"/>
     </Popup>
 
 </template>
@@ -29,8 +41,8 @@
 <style lang="scss" scoped>
 
     header {
-        background-color: rgb(98, 74, 46);
-        backdrop-filter: blur(25px);
+        background-color: rgb(98, 74, 46, 0.5);
+        backdrop-filter: blur(3px);
         padding: 0.25em;
         display: sticky;
         display: flex;

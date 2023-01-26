@@ -2,7 +2,13 @@
 
 <script setup>
 
-    let formName = ref("")
+    let formData = ref({
+        formName: "",
+        formQuestion: "",
+        formRepeat: 0,
+        formAnswerType: -1,
+    })
+
     let canTickSelectors = ref([true, true, true, true, true])
 
     function onCheckboxClick([valueID, isTicked]) {
@@ -15,14 +21,21 @@
             })
 
             updatedList[valueID] = true
+            formData.value.formAnswerType = valueID
         } else {
             canTickSelectors.value.map((selector) => {
                 selector = true
                 updatedList.push(selector)
             })
+
+            formData.value.formAnswerType = -1
         }
 
         canTickSelectors.value = updatedList
+    }
+
+    function numberInputValueChange([value]) {
+        formData.value.formRepeat = value
     }
 
 </script>
@@ -31,13 +44,13 @@
 
     <form>
         <label>Name:</label>
-        <input type="text" v-model="formName">
+        <input type="text" v-model="formData.formName">
 
         <label>Question:</label>
-        <input type="text" v-model="formName">
+        <input type="text" v-model="formData.formQuestion">
 
         <label>Repeat:</label>
-        <NumberInput>
+        <NumberInput @value-change="numberInputValueChange">
             <label class="number-input-label">Days</label>
         </NumberInput>
 
@@ -51,7 +64,7 @@
         </div>
 
         <div class="submit">
-            <button type="button">Add</button>
+            <button type="button" @click="$emit('data-submitted', [formData])">Add</button>
         </div>
 
 
