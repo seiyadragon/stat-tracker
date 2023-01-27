@@ -2,14 +2,18 @@
 <script lang="ts">
 
     export enum AnswerType {
-
+        Text = 0,
+        Number = 1,
+        TrueFalse = 2,
+        Rating = 3,
+        Streak = 4,
     }
 
     export default {
     props: ["formData"],
     methods: {
-        getAnswerType(answerType) {
-            
+        getAnswerType(answerType: number) {
+            return AnswerType[answerType]
         }
     }
 }
@@ -30,8 +34,11 @@
                 <p>{{ formData.formQuestion }}</p>
             </div>
             <div class="tracker-body-right">
-                <AnswerInput type="Test"/>
+                <AnswerInput :type="getAnswerType(formData.formAnswerType)"/>
             </div>
+        </div>
+        <div class="graph-area">
+
         </div>
     </div>
 
@@ -104,6 +111,9 @@
             }
         }
 
+        .graph-area {
+            background-color: black;
+        }
     }
 
 </style>

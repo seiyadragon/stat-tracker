@@ -61,7 +61,7 @@
         }
     
         h1, button a {
-            color: gold;
+            color: white;
             font-family: 'Tangerine';
         }
     

@@ -34,6 +34,8 @@
         margin-top: 1em;
         margin-bottom: 1em;
 
+        border-radius: 16px;
+
         label {
             font-size: 20px;
         }
