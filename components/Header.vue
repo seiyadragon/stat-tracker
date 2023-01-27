@@ -24,7 +24,7 @@
 <template>
 
     <header>
-        <img src="favicon.ico" alt="Chart Logo">
+        <img src="icon.ico" alt="Chart Logo">
         <button @click="onTrackClick()">
             <a href="#">
                 <h1>Add</h1>
