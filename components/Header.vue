@@ -51,6 +51,7 @@
         
         padding-left: 384px;
         padding-right: 384px;
+        
         @media (max-width: 400px) {
             padding-left: 24px;
             padding-right: 24px;

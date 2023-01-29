@@ -41,7 +41,6 @@
 <template>
 
     <div class="answer">
-        <p class="answer-title">Answer:</p>
         <div>
             <input type="text" v-if="type === 'Text'">
         </div>

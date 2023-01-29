@@ -15,6 +15,16 @@
         methods: {
             submitData([formData]) {
                 this.trackerArray.push(formData)
+            },
+            removeTracker([name]) {
+                let index = 0
+
+                this.trackerArray.forEach((tracker, i) => {
+                    if (tracker.formName === name)
+                        index = i
+                })
+
+                this.trackerArray.splice(index, 1)
             }
         }
     }
@@ -34,7 +44,7 @@
         <Panel>
             <section>
                 <h1>Stats:</h1>
-                <Tracker v-for="tracker in trackerArray" :key="tracker.formName" :form-data="tracker"/>
+                <Tracker v-for="tracker in trackerArray" :key="tracker.formName" :form-data="tracker" @onTrackerRemove="removeTracker"/>
             </section>
         </Panel>
     </main>

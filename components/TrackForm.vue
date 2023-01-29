@@ -66,8 +66,6 @@
         <div class="submit">
             <button type="button" @click="$emit('data-submitted', [formData])">Add</button>
         </div>
-
-
     </form>
 
 </template>

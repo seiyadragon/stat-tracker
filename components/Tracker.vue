@@ -23,34 +23,38 @@
 
 <template>
 
-    <div>
+    <section>
         <div class="title">
-            <p>{{ formData.formName }}</p>
-            <button>Remove</button>
+            <div>
+                <h1>{{ formData.formName }}</h1>
+                <h5>Repeats every {{ formData.formRepeat }} {{ formData.formRepeat === 1 ? 'day' : 'days'}}</h5>
+            </div>
+            <button @click="$emit('onTrackerRemove', [formData.formName])">Remove</button>
         </div>
         <div class="tracker-body">
-            <div class="tracker-body-left">
-                <p>Repeats every {{ formData.formRepeat }} {{ formData.formRepeat === 1 ? 'day' : 'days'}}</p>
-                <p>{{ formData.formQuestion }}</p>
-            </div>
-            <div class="tracker-body-right">
-                <AnswerInput :type="getAnswerType(formData.formAnswerType)"/>
-            </div>
+            <p>{{ formData.formQuestion }}</p>
+            <AnswerInput :type="getAnswerType(formData.formAnswerType)"/>
         </div>
         <div class="graph-area">
-
+            <h1>Data</h1>
+            <Graph />
         </div>
-    </div>
+    </section>
 
 </template>
 
 <style lang="scss" scoped>
 
-    div {
+    section {
+        div {
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+
         padding-top: 8px;
         padding-bottom: 8px;
 
-        margin-bottom: 16px;
+        margin-bottom: 4px;
 
         border: 2px solid gold;
         border-radius: 24px;
@@ -66,6 +70,20 @@
             border: none;
             border-bottom: solid 2px gold;
             border-radius: 0;
+
+            h1 {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                padding-top: 0;
+                margin-top: 0;
+            }
+
+            h5 {
+                margin-top: 0;
+                color: rgb(155, 155, 155);
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
 
             button {
                 font-family: 'Tangerine';
@@ -94,25 +112,13 @@
 
         .tracker-body {
             border: none;
-            display: flex;
-            flex-direction: row;
-
-            .tracker-body-left {
-                width: 50%;
-                border: none;
-                border-radius: 0px;
-            }
-
-            .tracker-body-right {
-                width: 50%;
-                border: none;
-                border-radius: 0px;
-                text-align: right;
-            }
         }
 
         .graph-area {
-            background-color: black;
+            border: none;
+            padding-left: 2px;
+            padding-right: 2px;
+            border-radius: 0px;
         }
     }
 
