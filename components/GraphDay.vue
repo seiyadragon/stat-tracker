@@ -29,16 +29,16 @@
         flex-direction: column;
 
         p {
-            position: absolute;
-            bottom: 11em;
+            position: relative;
+            bottom: 1em;
             border-bottom: 2px solid white;
             width: 32px;
             text-align: center;
         }
 
         div {
-            position: absolute;
-            bottom: 4.38em;
+            position: relative;
+            bottom: -0.3em;
         }
 
         .rounded-left {

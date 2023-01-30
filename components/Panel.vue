@@ -31,8 +31,8 @@
             color: white;
             font-family: 'Ubuntu';
 
-            padding-left: 384px;
-            padding-right: 384px;
+            padding-left: 192px;
+            padding-right: 192px;
 
             padding-bottom: 64px;
 

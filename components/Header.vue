@@ -13,6 +13,11 @@
                 this.isMenuOpen = !this.isMenuOpen
             },
             onSubmitData([formData]) {
+                if (formData.formName === "" || formData.formQuestion === "" || formData.formRepeat <= 0 || formData.answerType <= 0) {
+                    alert("Please fill out all the data!")
+                    return
+                }
+
                 this.onTrackClick()
                 this.$emit('form-data-received', [formData])
             }
@@ -49,8 +54,8 @@
         max-height: 64px;
         border-bottom: 4px solid gold;
         
-        padding-left: 384px;
-        padding-right: 384px;
+        padding-left: 192px;
+        padding-right: 192px;
         
         @media (max-width: 400px) {
             padding-left: 24px;
@@ -61,7 +66,7 @@
             text-decoration: none;
         }
     
-        h1, button a {
+        h1, button {
             color: white;
             font-family: 'Tangerine';
         }

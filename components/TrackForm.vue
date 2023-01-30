@@ -123,11 +123,11 @@
                 margin-left: auto;
                 margin-right: auto;
 
-                font-size: 24px;
+                font-size: 32px;
+                font-family: 'Tangerine';
 
                 border: none;
 
-                
                 transition: transform 0.5s;
                 transform: scale(1, 1);
             }

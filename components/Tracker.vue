@@ -15,6 +15,40 @@
         getAnswerType(answerType: number) {
             return AnswerType[answerType]
         }
+    },
+    data() {
+        return {
+            weekData: {
+                monday: {
+                    name: 'Mon',
+                    value: 16,
+                },
+                tuesday: {
+                    name: 'Tue',
+                    value: 32,
+                },
+                wednesday: {
+                    name: 'Wed',
+                    value: 4,
+                },
+                thursday: {
+                    name: 'Thr',
+                    value: 6,
+                },
+                friday: {
+                    name: 'Fri',
+                    value: 100,
+                },
+                saturday: {
+                    name: 'Sat',
+                    value: 23,
+                },
+                sunday: {
+                    name: 'Sun',
+                    value: 64,
+                }
+            }
+        }
     }
 }
 
@@ -37,7 +71,7 @@
         </div>
         <div class="graph-area">
             <h1>Data</h1>
-            <Graph />
+            <Graph :week-data="weekData"/>
         </div>
     </section>
 
@@ -52,7 +86,7 @@
         }
 
         padding-top: 8px;
-        padding-bottom: 8px;
+        padding-bottom: 0;
 
         margin-bottom: 4px;
 
@@ -63,6 +97,12 @@
         flex-direction: column;
 
         padding: 8px;
+        width: 340px;
+        height: 420px;
+
+        @media (max-width: 400px) {
+            width: 100%;
+        }
 
         .title {
             display: flex;
@@ -70,6 +110,8 @@
             border: none;
             border-bottom: solid 2px gold;
             border-radius: 0;
+            min-height: 10%;
+            max-height: 10%;
 
             h1 {
                 margin-bottom: 0;
@@ -112,6 +154,8 @@
 
         .tracker-body {
             border: none;
+            min-height: 40%;
+            max-height: 40%;
         }
 
         .graph-area {

@@ -4,12 +4,12 @@
     export default {
         data() {
             return {
-                trackerArray: ref([{
+                trackerArray: [{
                     formName: "Screen Time",
                     formQuestion: "How many hours did you spend staring at a screen?",
                     formRepeat: 1,
                     formAnswerType: 1,
-                }])
+                }]
             }
         },
         methods: {
@@ -44,7 +44,9 @@
         <Panel>
             <section>
                 <h1>Stats:</h1>
-                <Tracker v-for="tracker in trackerArray" :key="tracker.formName" :form-data="tracker" @onTrackerRemove="removeTracker"/>
+                <div class="tracker-container">
+                    <Tracker v-for="tracker in trackerArray" :key="tracker.formName + tracker.formQuestion" :form-data="tracker" @onTrackerRemove="removeTracker"/>
+                </div>
             </section>
         </Panel>
     </main>
@@ -57,6 +59,7 @@
         margin: 0%;
         background-image: url("/background.jpg");
         background-size: tile;
+        font-family: 'Ubuntu';
     }
 
     ::-webkit-scrollbar {
@@ -77,6 +80,15 @@
 
     main {
         height: 100vh;
+    }
+
+    .tracker-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 32px;
+        row-gap: 32px;
     }
 
 </style>

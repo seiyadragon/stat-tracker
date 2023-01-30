@@ -83,7 +83,7 @@
         }
 
         .checkbox {
-            text-align: right;
+            text-align: center;
         }
     }
 
