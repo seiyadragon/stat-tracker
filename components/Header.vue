@@ -31,9 +31,9 @@
     <header>
         <img src="/favicon.ico" alt="Chart Logo">
         <button @click="onTrackClick()">
-            <a href="#">
-                <h1>Add</h1>
-            </a>
+            <h1>
+                <Icon name="ion:plus-round" />
+            </h1>
         </button>
     </header>
 
@@ -68,7 +68,6 @@
     
         h1, button {
             color: white;
-            font-family: 'Tangerine';
         }
     
         button {

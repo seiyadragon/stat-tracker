@@ -63,7 +63,9 @@
                 <h1>{{ formData.formName }}</h1>
                 <h5>Repeats every {{ formData.formRepeat }} {{ formData.formRepeat === 1 ? 'day' : 'days'}}</h5>
             </div>
-            <button @click="$emit('onTrackerRemove', [formData.formName])">Remove</button>
+            <button @click="$emit('onTrackerRemove', [formData.formName])">
+                <Icon name="ion:close-round" />
+            </button>
         </div>
         <div class="tracker-body">
             <p>{{ formData.formQuestion }}</p>
@@ -128,7 +130,6 @@
             }
 
             button {
-                font-family: 'Tangerine';
                 background-color: transparent;
                 border: none;
                 font-size: 32px;

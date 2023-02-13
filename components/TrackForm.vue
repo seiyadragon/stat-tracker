@@ -64,7 +64,9 @@
         </div>
 
         <div class="submit">
-            <button type="button" @click="$emit('data-submitted', [formData])">Add</button>
+            <button type="button" @click="$emit('data-submitted', [formData])">
+                <Icon name="uil:check" />
+            </button>
         </div>
     </form>
 
@@ -124,8 +126,6 @@
                 margin-right: auto;
 
                 font-size: 32px;
-                font-family: 'Tangerine';
-
                 border: none;
 
                 transition: transform 0.5s;
